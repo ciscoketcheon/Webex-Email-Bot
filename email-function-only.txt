@@ -1,0 +1,49 @@
+//Start send-email
+//const { exec } = require('child_process');
+
+framework.hears(
+  /^send-email\|/,
+  (bot, trigger) => {
+    const input = trigger.text.trim();
+
+    const parts = input.split('|').map(part => part.trim());
+    if (parts.length < 5) {
+      bot.say(
+        "markdown",
+        "Invalid format. Please provide the details in this format:\n\n" +
+        "`send-email|sender email|recipient email|subject|body text`\n\n" +
+        "Example:\n```\nsend-email|user@example.com|recipient@example.com|Subject Here|Email body text here\n```"
+      );
+      return;
+    }
+
+    const [_, sender, recipient, subject, bodyText] = parts; // First line is "send-email"
+
+// Change x.x.x.x to your internal mail relay IP, smtp-auth is not integrated yet, hence try to allow this node from relay end
+    if (sender && recipient && subject && bodyText) {
+      const command = `swaks --server x.x.x.x --from "${sender}" --to "${recipient}" --header "subject: ${subject}" --body "${bodyText}"`;
+      console.log(`Executing command: ${command}`);
+
+      const { exec } = require('child_process');
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error executing swaks command: ${error.message}`);
+          bot.say("markdown", "There was an error while sending the email. Please check the input and try again.");
+          return;
+        }
+
+        console.log(`Swaks output: ${stdout}`);
+        bot.say("markdown", `Email sent successfully! Here's the output:\n\n\`\`\`\n${stdout}\n\`\`\``);
+      });
+    } else {
+      bot.say("markdown", "Error: Missing required details. Please follow the format mentioned above.");
+    }
+  },
+  "\n\n**send-email**: (send-email|Sender email address|Recipient email address|Subject Here|Email body text here)",
+  0
+);
+
+//end send mail
+
+
+
