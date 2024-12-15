@@ -32,6 +32,7 @@ git clone https://github.com/ciscoketcheon/Webex-Email-Bot.git
    - Copy "email-function-only.txt" content, it is the main code for "send-email" function
    - Paste it anywhere in between function. A function starts with "framework.hears(" and ends with ");"
    - Recommend to paste it before the last catch-all function. Refer to the "index.js" here as reference
+
 4. One more modification needed is to update the x.x.x.x in the "send-email" function with your relay server IP address
 ```bash
    ...const command = `swaks --server x.x.x.x --from "${sender}...
@@ -40,6 +41,7 @@ Example update, say relay server IP address is 192.168.25.25. Relay server confi
 ```bash
    ...const command = `swaks --server 192.168.25.25 --from "${sender}...
 ```
+
 5. Save and re-run the bot script
 ```bash
 npm start
