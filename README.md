@@ -90,3 +90,34 @@ npm start
 ```
 
 
+## Sending email with the bot
+
+Look for your bot from webex teams, start by sending the bot anything, it shall response with suggested usage, example:-
+```bash
+Usage:
+	•	framework: (learn more about the Webex Bot Framework)
+	•	info: (get your personal details)
+	•	space: (get details about this space)
+	•	say hi to everyone: (everyone gets a greeting using a call to the Webex SDK)
+	•	card me: (a cool card!)
+	•	reply: (have bot reply to your message)
+	•	help: (what you are reading now)
+	•	send-email: (send-email|Sender email address|Recipient email address|Subject Here|Email body text here)
+
+
+Powered by Webex Node Bot Framework - https://github.com/webex/webex-node-bot-framework
+```
+
+Try to send a email following the syntax, example:-
+```bash
+send-email sender@test.com|recipient@domain.com|any subject|any email body content
+```
+
+You will receive response from the bot if the email sent successfully. 
+
+
+## References
+Webex bot -> https://developer.webex.com/blog/from-zero-to-webex-teams-chatbot-in-15-minutes
+Webex bot github -> https://github.com/WebexSamples/webex-bot-starter
+
+
