@@ -51,7 +51,7 @@ npm start
 
 ## Webex-bot Installation (from scratch)
 
-If you never installed a Webex bot before, suggest to follow this full guide -> https://developer.webex.com/blog/from-zero-to-webex-teams-chatbot-in-15-minutes
+If you have never installed a Webex bot before, suggest to follow this full guide -> https://developer.webex.com/blog/from-zero-to-webex-teams-chatbot-in-15-minutes
 
 In summary, here are the steps from scratch:-
 
@@ -65,7 +65,9 @@ git clone https://github.com/WebexSamples/webex-bot-starter.git && cd webex-bot-
 ngrok http 7001 --region=eu
 ```
 Optional -- Do explore using a separate screen or terminal for ngrok and npm, try run "screen" from linux to spawn a new one, or do a "screen -r" to show the running screens, and do a "screen -r XXXX" to restore a screen (XXXX is the screen number). If you want to leave current screen session and jump back to main session, do a Ctrl+A+D key combination.
+
 4. Copy ".env.local" to a new file ".env", update the ".env" file with ngrok webhook URL (from #3) and webex bot auth-token (from #1)
+
 5. In another folder, clone this repo 
 ```bash
 git clone https://github.com/ciscoketcheon/Webex-Email-Bot.git
@@ -82,7 +84,7 @@ Example update, say relay server IP address is 192.168.25.25. Relay server confi
 ```bash
    ...const command = `swaks --server 192.168.25.25 --from "${sender}...
 ```
-8. Save and re-run the bot script
+8. Save and re-run the bot script (from webex-bot-starter folder)
 ```bash
 npm start
 ```
