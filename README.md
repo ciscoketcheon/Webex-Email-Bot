@@ -12,7 +12,7 @@ Pre-requisite:-
 
 * Webex-bot-starter, or a working webex bot - https://github.com/WebexSamples/webex-bot-starter
 * NPM - this is needed to run webex bot
-* ngrok - we use web hook to get input from that you (or other user) sent to the bot - https://github.com/WebexSamples/webex-bot-starter
+* ngrok - we use web hook to get input from that you (or other user) sent to the bot - https://ngrok.com/
 * SMTP relay - the bot will call this SMTP using "swaks" command, yes you will need swaks also
 * swaks - Swiss army knife for SMTP - http://www.jetmore.org/john/code/swaks/
 
